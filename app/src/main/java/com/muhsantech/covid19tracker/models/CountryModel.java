@@ -1,4 +1,4 @@
-package com.muhsantech.covid19tracker;
+package com.muhsantech.covid19tracker.models;
 
 public class CountryModel {
     private String flag, country, cases, todayCases, deaths, todayDeaths, recovered, active, critical;

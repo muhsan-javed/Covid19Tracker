@@ -11,14 +11,17 @@
         android:id="@+id/edSearch"
         android:layout_width="match_parent"
         android:layout_height="45dp"
-        android:layout_margin="10dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/edittext_shadow"
         android:drawableStart="@drawable/ic_baseline_search_24"
+        android:drawablePadding="15dp"
+        android:hint="@string/search"
         android:maxLines="1"
-        android:paddingLeft="20dp"
-        android:singleLine="true"
-        android:hint="Search"
-        android:drawablePadding="15dp"/>
+        android:paddingStart="20dp"
+        android:singleLine="true" />
 
     <ListView
         android:layout_width="match_parent"

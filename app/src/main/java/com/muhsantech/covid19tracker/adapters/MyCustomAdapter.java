@@ -1,5 +1,6 @@
-package com.muhsantech.covid19tracker;
+package com.muhsantech.covid19tracker.adapters;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -13,6 +14,9 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
 import com.bumptech.glide.Glide;
+import com.muhsantech.covid19tracker.AffectedCountries;
+import com.muhsantech.covid19tracker.R;
+import com.muhsantech.covid19tracker.models.CountryModel;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -20,7 +24,7 @@ import java.util.List;
 
 public class MyCustomAdapter extends ArrayAdapter<CountryModel> {
 
-    private Context context;
+    private final Context context;
     private List<CountryModel> countryModelList;
     private List<CountryModel> countryModelListFiltered;
 
@@ -31,11 +35,13 @@ public class MyCustomAdapter extends ArrayAdapter<CountryModel> {
         this.countryModelList = countryModelList;
         this.countryModelListFiltered = countryModelList;
     }
-    @NonNull
-    @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
 
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.list_custom_item, null,true);
+    @SuppressLint("ViewHolder")
+    @Override
+    public View getView(int position, View convertView, ViewGroup parent) {
+
+        View view = LayoutInflater.from(context).inflate(R.layout.list_custom_item, parent, false);
+
         TextView tvCountryName = view.findViewById(R.id.tvCountryName);
         ImageView imageview = view.findViewById(R.id.imageFlag);
 
